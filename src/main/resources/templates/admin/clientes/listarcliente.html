@@ -35,7 +35,7 @@
 
 					</div>
 					<div class="card-body">
-						<a href="admin/clientes/adicionar.jsp" class="btn btn-criar-cliente mb-4">Novo Cliente</a>
+						<a href="cadastrarclientes" class="btn btn-criar-cliente mb-4">Novo Cliente</a>
 						<table class="table table-responsive table-hover">
 							<thead>
 								<tr>
@@ -51,15 +51,14 @@
 								<tr th:each="c : ${clientes}">
 									<td th:text="${c.id}"></td>
 									<td th:text="${c.nome }">
-										</tdth:text="">
 									<td th:text="${c.email }"></td>
 									<td th:text="${c.datanasc}"></td>
 									<td>
 										<div class="d-flex justify-content-center">
-											<a href="EditarCliente?id=${c.id}"><i
+											<a th:href="@{/admin/{id}/editarcliente (id=${c.id})}"><i
 													class="bi bi-pencil-square text-primary-emphasis fs-5 me-2"></i></a>
-											<a href="DeletarCliente?id=${c.id}" title="cancelar"
-												onclick="return confirm('Deseja excluir o cliente ${c.nome}?')">
+											<a th:href="@{/admin/{id}/excluircliente (id=${c.id})}" title="cancelar"
+												onclick="return confirm('Deseja excluir o cliente?')">
 												<i class="bi bi-trash3 text-danger-emphasis fs-5"></i>
 											</a>
 										</div>

@@ -1,8 +1,6 @@
 package com.agencia.model;
 
 import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.Objects;
 
 import jakarta.persistence.Entity;
@@ -90,23 +88,6 @@ public class Clientes {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public static String formatDate(Date datanasc) {
-		if (datanasc != null) {
-			Calendar calendar = Calendar.getInstance();
-	        calendar.setTime(datanasc);
-
-	        // Extrair dia, mês e ano
-	        int dia = calendar.get(Calendar.DAY_OF_MONTH);
-	        int mes = calendar.get(Calendar.MONTH) + 1; // Os meses em Calendar começam em 0 (janeiro é 0)
-	        int ano = calendar.get(Calendar.YEAR);
-	        String dataformatada = String.format("%02d", dia) + "/" + String.format("%02d", mes) + "/"+ ano;
-	        return dataformatada;
-		} else {
-			return "Data não especificada";
-		}
-		
 	}
 	
 	@Override
