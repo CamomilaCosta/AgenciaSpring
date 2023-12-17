@@ -1,0 +1,74 @@
+<!-- menu.html -->
+<nav th:fragment="menu(pag)" class="header-nav navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+            <img class="logo" src="../reset/img/logo1.png" alt="logo" />
+        </a>
+
+        <!-- Toggle button -->
+        <button class="navbar-toggler shadow-none border-0" type="button"
+                data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg"
+                aria-controls="navbarOffcanvasLg">
+            <i class="bi bi-list fs-1 togle-menu"></i>
+        </button>
+
+        <!-- Sidebar -->
+        <div class="sidebar offcanvas offcanvas-end" tabindex="-1"
+             id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
+            <!-- Sidebar header -->
+            <div class="offcanvas-header">
+                <img class="logo" th:src="${logo}" alt="logo" />
+                <i class="bi bi-x-lg fs-1 close-btn" data-bs-dismiss="offcanvas"
+                   aria-label="Close"></i>
+            </div>
+
+            <!-- Sidebar body -->
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-center fs-6 flex-grow-1">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link a" th:class="${pag eq 'home'} ? 'active nav-link a' : 'nav-link a'">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/about" class="nav-link a" th:class="${pag eq 'about'} ? 'active nav-link a' : 'nav-link a'">Sobre nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tours" class="nav-link a" th:class="${pag eq 'tours'} ? 'active nav-link a' : 'nav-link a'">Pacotes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact" class="nav-link a" th:class="${pag eq 'contact'} ? 'active nav-link a' : 'nav-link a'">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="admin/clientes" class="nav-link a" th:class="${pag eq 'adm'} ? 'active nav-link a' : 'nav-link a'">Painel de administrador</a>
+                    </li>
+                    <!-- Adicione os outros itens do menu aqui -->
+                </ul>
+                <div class="social-icons fs-5 d-flex align-items-center justify-content-between">
+                    <a href=""><i class="social-icon bi bi-whatsapp"></i></a>
+                    <a href=""><i class="social-icon bi bi-facebook"></i></a>
+                    <a href=""><i class="social-icon bi bi-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div th:fragment="menuAdmin(pag)" class="card-header">
+	<ul class="nav nav-tabs card-header-tabs">
+		<li class="nav-item">
+			<a class="nav-link" aria-current="true" th:class="${pag eq 'clientes'} ? 'active nav-link' : 'nav-link'" href="/admin/clientes">Clientes</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="/admin/hoteis">Hoteis</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="/admin/voos">Voos</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="/admin/pacotes">Pacotes</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="/admin/compras">Compras</a>
+		</li>
+	</ul>
+</div>
