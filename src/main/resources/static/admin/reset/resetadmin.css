@@ -1,8 +1,11 @@
 #itens-admin{
 	margin-top: 82px;
 	padding-top: 2rem;
+	
 }
-
+.card-body{
+	overflow:scroll;
+}
 .card-header .nav .nav-item .nav-link{
 	color: var(--orange-base);
 }
