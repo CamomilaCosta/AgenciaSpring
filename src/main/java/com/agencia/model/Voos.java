@@ -20,8 +20,6 @@ public class Voos {
 	private String cidade_destino;
 	private String aeroporto_decolagem;
 	private String aeroporto_pouso;
-	private String hora_decolagem;
-	private String hora_pouso;
 	private LocalDate dia_decolagem;
 	private LocalDate dia_pouso;
 	private float preco;
