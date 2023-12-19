@@ -2,7 +2,7 @@ package com.agencia.model;
 
 import java.time.LocalDate;
 
-
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,7 +21,9 @@ public class Pacotes {
 	private String origem;
 	private LocalDate data_ida;
 	private LocalDate data_volta;
+	@Column(nullable = true)
 	private float preco;
+	@Column(nullable = true)
 	private int dias_pacote;
 	
 	@ManyToOne
